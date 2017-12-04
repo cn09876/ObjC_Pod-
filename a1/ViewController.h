@@ -7,8 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <CoreVideo/CoreVideo.h>
+#import <CoreMedia/CoreMedia.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <
+AVCaptureVideoDataOutputSampleBufferDelegate> {
+    AVCaptureSession *_captureSession;
+    UIImageView *_imageView;
+    CALayer *_customLayer;
+    AVCaptureVideoPreviewLayer *_prevLayer;
+}
+
+@property (weak, nonatomic) IBOutlet UITextField *txt_info;
 
 
 @end
